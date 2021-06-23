@@ -16,13 +16,6 @@ export default class URL {
             params: null,
         }
 
-        // var string =  document.createElement('a');
-        // string.href = url;
-        // response.protocol = string.protocol;
-        // response.host = string.host;
-        // console.log(string, response);
-        // console.log(response)
-
         if(typeof url != 'string'){
             throw new Error('Tipo invalido');
         }
@@ -34,22 +27,6 @@ export default class URL {
         return response;
     }
 }
-
-
-/**
-  var parser = document.createElement('a');
-    parser.href = "http://example.com:3000/pathname/?search=test#hash";
-
-    parser.protocol; // => "http:"
-    parser.host;     // => "example.com:3000"
-    parser.hostname; // => "example.com"
-    parser.port;     // => "3000"
-    parser.pathname; // => "/pathname/"
-    parser.hash;     // => "#hash"
-    parser.search;   // => "?search=test"
-    parser.origin;   // => "http://example.com:3000"
- */
-
 
 // Dada uma URL, desenvolva um programa que indique se a URL é válida ou não e, caso seja válida, retorne as suas partes constituintes.
 

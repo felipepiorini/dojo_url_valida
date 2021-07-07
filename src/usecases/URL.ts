@@ -6,7 +6,7 @@ export interface IResponse {
     params: string,
 }
 
-export default class URL {
+export default class UrlValidator {
     validarUrl(url): IResponse {
         var response: IResponse = {
             protocol: null,
@@ -20,11 +20,16 @@ export default class URL {
             throw new Error('Tipo invalido');
         }
 
-        if(/^(http):\/\/[^ "]+$/.test(url) === false ) {
+        if(/^(http|https|ssh):\/\/[^ "]+$/.test(url) === false ) {
             throw new Error('Formato invalido');
         }
-       
+
+        const urlObject = new URL(url);
+
+        response.host = urlObject.hostname;
+        response.protocol = urlObject.protocol.replace(':','');
         return response;
+
     }
 }
 
